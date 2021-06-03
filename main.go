@@ -1,24 +1,45 @@
 package main
 
 import (
+	"accountServer/config"
 	"accountServer/router"
 	"errors"
 	"github.com/gin-gonic/gin"
+	"github.com/spf13/pflag"
+	"github.com/spf13/viper"
 	"log"
 	"net/http"
 	"time"
 )
 
+var (
+	cfg = pflag.StringP("config", "c", "", "accountServer config file path.")
+)
+
 func main() {
-	g := gin.New()                    // Create the Gin engine
-	middlewares := []gin.HandlerFunc{} // gin middlewares
+	pflag.Parse()
+
+	// init config
+	if err := config.Init(*cfg); err != nil {
+		panic(err)
+	}
+
+	// set gin mode
+	gin.SetMode(viper.GetString("runmode"))
+
+	// create the gin engine
+	g := gin.New()
+
+	// gin middlewares
+	middlewares := []gin.HandlerFunc{}
+
 	// Routes
 	router.Load(
 		g,              // cores
 		middlewares..., // middlewares
 	)
 
-	// 自检
+	// ping the svr to make sure the router is working
 	go func() {
 		if err := ping(); err != nil {
 			log.Fatal("The router has no response, or it might took too long to start up.", err)
@@ -26,8 +47,8 @@ func main() {
 		log.Print("The router has been deployed successfully.")
 	}()
 
-	log.Printf("Start to listen the coming requests on http address: %s", ":8080")
-	log.Printf(http.ListenAndServe(":8080", g).Error())
+	log.Printf("Start to listening the incoming requests on http address: %s", viper.GetString("addr"))
+	log.Printf(http.ListenAndServe(viper.GetString("addr"), g).Error())
 }
 
 // 自检保证启动后的API服务器处于健康状态
