@@ -1,0 +1,31 @@
+# viper配置读取
+runmode: debug # debug, release, test
+addr: :8888 # http绑定端口
+name: accountserver
+url: http://127.0.0.1:8888 # ping()请求的svr ip:port
+max_ping_count: 10 # ping()的try次数
+
+# 日志记录管理
+log:
+  writers: stdout,file # 标准输出, 指定的日志文件
+  logger_level: DEBUG # 日志级别, DEBUG, INFO, WARN, ERROR, FATAL
+  logger_file: log/accountserver.log # 日志文件保存位置
+  log_format_text: false # false输出JSON格式
+  rollingPolicy: size # rotate依据, size根据大小转存
+  log_rotate_date: 1 # rotate时间
+  log_rotate_size: 1024 # rotate大小, MB
+  log_backup_count: 7 # log file达到rotate标准, 将file压缩备份, 此处是备份文件的最大份数
+
+# 数据库配置
+db:
+  name: db_accountserver # 数据库名
+  addr: 127.0.0.1:3306 # mysql server地址
+  username: root
+  password: mysql991004
+
+#
+docker_db:
+  name: db_accountserver
+  addr: 127.0.0.1:3306
+  username: root
+  password: root

@@ -1,19 +1,20 @@
 package main
 
 import (
-	"accountServer/config"
-	"accountServer/router"
+	"accountserver/config"
+	"accountserver/model"
+	"accountserver/router"
 	"errors"
 	"github.com/gin-gonic/gin"
+	"github.com/lexkong/log"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
-	"log"
 	"net/http"
 	"time"
 )
 
 var (
-	cfg = pflag.StringP("config", "c", "", "accountServer config file path.")
+	cfg = pflag.StringP("config", "c", "", "accountserver config file path.")
 )
 
 func main() {
@@ -23,6 +24,10 @@ func main() {
 	if err := config.Init(*cfg); err != nil {
 		panic(err)
 	}
+
+	// init db
+	model.DB.Init()
+	defer model.DB.Close()
 
 	// set gin mode
 	gin.SetMode(viper.GetString("runmode"))
@@ -44,25 +49,24 @@ func main() {
 		if err := ping(); err != nil {
 			log.Fatal("The router has no response, or it might took too long to start up.", err)
 		}
-		log.Print("The router has been deployed successfully.")
+		log.Info("The router has been deployed successfully.")
 	}()
 
-	log.Printf("Start to listening the incoming requests on http address: %s", viper.GetString("addr"))
-	log.Printf(http.ListenAndServe(viper.GetString("addr"), g).Error())
+	log.Infof("Start to listening the incoming requests on http address: %s", viper.GetString("addr"))
+	log.Info(http.ListenAndServe(viper.GetString("addr"), g).Error())
 }
 
 // 自检保证启动后的API服务器处于健康状态
 func ping() error {
-	for i := 0; i < 2; i++ {
+	for i := 0; i < viper.GetInt("max_ping_count"); i++ {
 		// Ping the server by sending a GET request to `/health`.
-		resp, err := http.Get("http://127.0.0.1:8080" + "/sc/health")
-		// svr正常运作退出ping()
+		resp, err := http.Get(viper.GetString("url") + "/sc/health")
 		if err == nil && resp.StatusCode == 200 {
 			return nil
 		}
 
 		// Sleep for a second to continue the next ping.
-		log.Print("Waiting for the router, retry in 1 second.")
+		log.Info("Waiting for the router, retry in 1 second.")
 		time.Sleep(time.Second)
 	}
 	return errors.New("cannot connect to the router")

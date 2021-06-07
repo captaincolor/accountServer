@@ -1,4 +1,5 @@
 // 检测svr健康状态的处理函数
+
 package sc
 
 import (
@@ -12,18 +13,18 @@ import (
 )
 
 const (
-	B = 1
+	B  = 1
 	KB = 1024 * B
 	MB = 1024 * KB
 	GB = 1024 * MB
 )
 
-func HealthCheck(c *gin.Context)  {
+func HealthCheck(c *gin.Context) {
 	message := "OK\n"
 	c.String(http.StatusOK, "\n"+message)
 }
 
-func DiskCheck(c *gin.Context)  {
+func DiskCheck(c *gin.Context) {
 	u, _ := disk.Usage("/")
 	usedMB := int(u.Used) / MB
 	usedGB := int(u.Used) / GB
