@@ -1,41 +1,43 @@
-// api for creating account
+// API for creating account
 
 package user
 
 import (
+	"accountserver/handler"
 	"accountserver/pkg/errno"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/lexkong/log"
-	"net/http"
 )
 
 func Create(c *gin.Context) {
-	var r struct {
-		Username string `json:"username"`
-		Password string `json:"password"`
-	}
-
-	var err error
+	var r CreateRequest
+	// Bind()检查Content-Type类型，将消息体按照指定的格式解析到struct中
 	if err := c.Bind(&r); err != nil {
-		c.JSON(http.StatusOK, gin.H{"error": errno.ErrBind})
+		handler.SendResponse(c, errno.ErrBind, nil)
 		return
 	}
 
+	pm := c.Param("username") // 读取并返回URL的参数值
+	log.Infof("URL username: %s", pm)
+
+	desc := c.Query("desc") // 读取并返回URL的地址参数
+	log.Infof("URL key param desc: %s", desc)
+
+	contentType := c.GetHeader("Content-Type") // 获取HTTP Header
+	log.Infof("Header Content-Type: %s", contentType)
+
 	log.Debugf("username is: [%s], password is [%s]", r.Username, r.Password) // 对内
 	if r.Username == "" {
-		err = errno.New(errno.ErrUserNotFound, fmt.Errorf("username can not found in db: xx.xx.xx.xx")) // 对内
-		log.Errorf(err, "Error!")                                                                       // 对内
+		handler.SendResponse(c, errno.New(errno.ErrUserNotFound, fmt.Errorf("username can not found in db: xx.xx.xx.xx")), nil) // 对内
+		return
 	}
-
-	if errno.IsErrUserNotFound(err) {
-		log.Debug("err type is ErrUserNotFound") // 对内
-	}
-
 	if r.Password == "" {
-		err = fmt.Errorf("password is empty") // 对外
+		handler.SendResponse(c, fmt.Errorf("password is empty"), nil)
 	}
 
-	code, message := errno.DecodeErr(err)
-	c.JSON(http.StatusOK, gin.H{"code": code, "message": message})
+	resp := CreateResponse{
+		Username: r.Username,
+	}
+	handler.SendResponse(c, nil, resp)
 }

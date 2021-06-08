@@ -26,7 +26,7 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 	// routes for creating account
 	u := g.Group("/v1/user")
 	{
-		u.POST("", user.Create)
+		u.POST("/:username", user.Create)
 	}
 
 	// sc(serverCheck)分组主要用来检查API服务器的状态

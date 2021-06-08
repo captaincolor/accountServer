@@ -54,3 +54,89 @@
 {"level":"DEBUG","timestamp":"2021-06-07 15:58:49.258","file":"user/create.go:25","msg":"username is: [], password is [admin]"}
 {"level":"ERROR","timestamp":"2021-06-07 15:58:49.258","file":"user/create.go:28","msg":"Get an error","data":{"error":"Err - code: 20102, message: The user was not found., error: username can not found in db: xx.xx.xx.xx"}}
 {"level":"DEBUG","timestamp":"2021-06-07 15:58:49.258","file":"user/create.go:32","msg":"err type is ErrUserNotFound"}
+{"level":"ERROR","timestamp":"2021-06-07 16:43:56.807","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1049: Unknown database 'db_accountserver'"}}
+{"level":"ERROR","timestamp":"2021-06-07 16:43:56.937","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1045: Access denied for user 'root'@'localhost' (using password: YES)"}}
+{"level":"INFO","timestamp":"2021-06-07 16:43:56.938","file":"accountserver/main.go:55","msg":"Start to listening the incoming requests on http address: :8888"}
+{"level":"INFO","timestamp":"2021-06-07 16:43:56.966","file":"accountserver/main.go:52","msg":"The router has been deployed successfully."}
+{"level":"DEBUG","timestamp":"2021-06-07 16:44:04.098","file":"user/create.go:25","msg":"username is: [], password is [admin]"}
+{"level":"ERROR","timestamp":"2021-06-07 16:44:04.100","file":"user/create.go:28","msg":"Get an error","data":{"error":"Err - code: 20102, message: The user was not found., error: username can not found in db: xx.xx.xx.xx"}}
+{"level":"DEBUG","timestamp":"2021-06-07 16:44:04.100","file":"user/create.go:32","msg":"err type is ErrUserNotFound"}
+{"level":"ERROR","timestamp":"2021-06-07 16:49:36.714","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1049: Unknown database 'db_accountserver'"}}
+{"level":"ERROR","timestamp":"2021-06-07 16:49:36.736","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1045: Access denied for user 'root'@'localhost' (using password: YES)"}}
+{"level":"INFO","timestamp":"2021-06-07 16:49:36.736","file":"accountserver/main.go:55","msg":"Start to listening the incoming requests on http address: :8888"}
+{"level":"INFO","timestamp":"2021-06-07 16:49:36.742","file":"accountserver/main.go:52","msg":"The router has been deployed successfully."}
+{"level":"DEBUG","timestamp":"2021-06-07 16:49:44.198","file":"user/create.go:25","msg":"username is: [], password is [admin]"}
+{"level":"ERROR","timestamp":"2021-06-07 16:49:44.198","file":"user/create.go:28","msg":"Error!","data":{"error":"Err - code: 20102, message: The user was not found., error: username can not found in db: xx.xx.xx.xx"}}
+{"level":"DEBUG","timestamp":"2021-06-07 16:49:44.199","file":"user/create.go:32","msg":"err type is ErrUserNotFound"}
+{"level":"ERROR","timestamp":"2021-06-08 14:15:51.852","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1049: Unknown database 'db_accountserver'"}}
+{"level":"ERROR","timestamp":"2021-06-08 14:15:51.866","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1045: Access denied for user 'root'@'localhost' (using password: YES)"}}
+{"level":"INFO","timestamp":"2021-06-08 14:15:51.866","file":"accountserver/main.go:55","msg":"Start to listening the incoming requests on http address: :8888"}
+{"level":"INFO","timestamp":"2021-06-08 14:15:51.868","file":"accountserver/main.go:52","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2021-06-08 14:18:30.814","file":"user/create.go:22","msg":"URL username: admin2"}
+{"level":"INFO","timestamp":"2021-06-08 14:18:30.815","file":"user/create.go:25","msg":"URL key param desc: test"}
+{"level":"INFO","timestamp":"2021-06-08 14:18:30.815","file":"user/create.go:28","msg":"Header Content-Type: application/json"}
+{"level":"DEBUG","timestamp":"2021-06-08 14:18:30.815","file":"user/create.go:30","msg":"username is: [admin], password is [admin]"}
+{"level":"ERROR","timestamp":"2021-06-08 14:18:56.402","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1049: Unknown database 'db_accountserver'"}}
+{"level":"ERROR","timestamp":"2021-06-08 14:18:56.413","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1045: Access denied for user 'root'@'localhost' (using password: YES)"}}
+{"level":"INFO","timestamp":"2021-06-08 14:18:56.413","file":"accountserver/main.go:55","msg":"Start to listening the incoming requests on http address: :8888"}
+{"level":"INFO","timestamp":"2021-06-08 14:18:56.415","file":"accountserver/main.go:52","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2021-06-08 14:18:59.639","file":"user/create.go:22","msg":"URL username: admin2"}
+{"level":"INFO","timestamp":"2021-06-08 14:18:59.639","file":"user/create.go:25","msg":"URL key param desc: test"}
+{"level":"INFO","timestamp":"2021-06-08 14:18:59.639","file":"user/create.go:28","msg":"Header Content-Type: application/json"}
+{"level":"DEBUG","timestamp":"2021-06-08 14:18:59.639","file":"user/create.go:30","msg":"username is: [admin], password is [admin]"}
+{"level":"ERROR","timestamp":"2021-06-08 14:21:38.961","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1049: Unknown database 'db_accountserver'"}}
+{"level":"ERROR","timestamp":"2021-06-08 14:21:38.969","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1045: Access denied for user 'root'@'localhost' (using password: YES)"}}
+{"level":"INFO","timestamp":"2021-06-08 14:21:38.970","file":"accountserver/main.go:55","msg":"Start to listening the incoming requests on http address: :8888"}
+{"level":"INFO","timestamp":"2021-06-08 14:21:38.971","file":"accountserver/main.go:52","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2021-06-08 14:21:44.545","file":"user/create.go:22","msg":"URL username: "}
+{"level":"INFO","timestamp":"2021-06-08 14:21:44.545","file":"user/create.go:25","msg":"URL key param desc: test"}
+{"level":"INFO","timestamp":"2021-06-08 14:21:44.546","file":"user/create.go:28","msg":"Header Content-Type: application/json"}
+{"level":"DEBUG","timestamp":"2021-06-08 14:21:44.546","file":"user/create.go:30","msg":"username is: [admin], password is [admin]"}
+{"level":"ERROR","timestamp":"2021-06-08 14:22:35.920","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1049: Unknown database 'db_accountserver'"}}
+{"level":"ERROR","timestamp":"2021-06-08 14:22:35.929","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1045: Access denied for user 'root'@'localhost' (using password: YES)"}}
+{"level":"INFO","timestamp":"2021-06-08 14:22:35.929","file":"accountserver/main.go:55","msg":"Start to listening the incoming requests on http address: :8888"}
+{"level":"INFO","timestamp":"2021-06-08 14:22:35.932","file":"accountserver/main.go:52","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2021-06-08 14:22:44.113","file":"user/create.go:22","msg":"URL username: admin2"}
+{"level":"INFO","timestamp":"2021-06-08 14:22:44.114","file":"user/create.go:25","msg":"URL key param desc: test"}
+{"level":"INFO","timestamp":"2021-06-08 14:22:44.114","file":"user/create.go:28","msg":"Header Content-Type: application/json"}
+{"level":"DEBUG","timestamp":"2021-06-08 14:22:44.114","file":"user/create.go:30","msg":"username is: [admin], password is [admin]"}
+{"level":"ERROR","timestamp":"2021-06-08 14:23:29.495","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1049: Unknown database 'db_accountserver'"}}
+{"level":"ERROR","timestamp":"2021-06-08 14:23:29.507","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1045: Access denied for user 'root'@'localhost' (using password: YES)"}}
+{"level":"INFO","timestamp":"2021-06-08 14:23:29.508","file":"accountserver/main.go:55","msg":"Start to listening the incoming requests on http address: :8888"}
+{"level":"INFO","timestamp":"2021-06-08 14:23:29.512","file":"accountserver/main.go:52","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2021-06-08 14:23:54.091","file":"user/create.go:22","msg":"URL username: usr1"}
+{"level":"INFO","timestamp":"2021-06-08 14:23:54.091","file":"user/create.go:25","msg":"URL key param desc: test"}
+{"level":"INFO","timestamp":"2021-06-08 14:23:54.091","file":"user/create.go:28","msg":"Header Content-Type: application/json"}
+{"level":"DEBUG","timestamp":"2021-06-08 14:23:54.091","file":"user/create.go:30","msg":"username is: [admin], password is [admin]"}
+{"level":"ERROR","timestamp":"2021-06-08 14:26:32.960","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1049: Unknown database 'db_accountserver'"}}
+{"level":"ERROR","timestamp":"2021-06-08 14:26:32.970","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1045: Access denied for user 'root'@'localhost' (using password: YES)"}}
+{"level":"INFO","timestamp":"2021-06-08 14:26:32.970","file":"accountserver/main.go:55","msg":"Start to listening the incoming requests on http address: :8888"}
+{"level":"INFO","timestamp":"2021-06-08 14:26:32.971","file":"accountserver/main.go:52","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2021-06-08 14:26:34.510","file":"user/create.go:22","msg":"URL username: "}
+{"level":"INFO","timestamp":"2021-06-08 14:26:34.510","file":"user/create.go:25","msg":"URL key param desc: test"}
+{"level":"INFO","timestamp":"2021-06-08 14:26:34.510","file":"user/create.go:28","msg":"Header Content-Type: application/json"}
+{"level":"DEBUG","timestamp":"2021-06-08 14:26:34.510","file":"user/create.go:30","msg":"username is: [admin], password is [admin]"}
+{"level":"ERROR","timestamp":"2021-06-08 14:29:47.705","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1049: Unknown database 'db_accountserver'"}}
+{"level":"ERROR","timestamp":"2021-06-08 14:29:47.717","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1045: Access denied for user 'root'@'localhost' (using password: YES)"}}
+{"level":"INFO","timestamp":"2021-06-08 14:29:47.718","file":"accountserver/main.go:55","msg":"Start to listening the incoming requests on http address: :8888"}
+{"level":"INFO","timestamp":"2021-06-08 14:29:47.720","file":"accountserver/main.go:52","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2021-06-08 14:30:05.935","file":"user/create.go:22","msg":"URL username: admin"}
+{"level":"INFO","timestamp":"2021-06-08 14:30:05.935","file":"user/create.go:25","msg":"URL key param desc: test"}
+{"level":"INFO","timestamp":"2021-06-08 14:30:05.935","file":"user/create.go:28","msg":"Header Content-Type: application/json"}
+{"level":"DEBUG","timestamp":"2021-06-08 14:30:05.935","file":"user/create.go:30","msg":"username is: [henryho], password is [1004]"}
+{"level":"ERROR","timestamp":"2021-06-08 14:34:21.468","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1049: Unknown database 'db_accountserver'"}}
+{"level":"ERROR","timestamp":"2021-06-08 14:34:21.482","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1045: Access denied for user 'root'@'localhost' (using password: YES)"}}
+{"level":"INFO","timestamp":"2021-06-08 14:34:21.483","file":"accountserver/main.go:55","msg":"Start to listening the incoming requests on http address: :8888"}
+{"level":"INFO","timestamp":"2021-06-08 14:34:21.484","file":"accountserver/main.go:52","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2021-06-08 14:34:24.469","file":"user/create.go:22","msg":"URL username: henry"}
+{"level":"INFO","timestamp":"2021-06-08 14:34:24.469","file":"user/create.go:25","msg":"URL key param desc: test"}
+{"level":"INFO","timestamp":"2021-06-08 14:34:24.469","file":"user/create.go:28","msg":"Header Content-Type: application/json"}
+{"level":"DEBUG","timestamp":"2021-06-08 14:34:24.469","file":"user/create.go:30","msg":"username is: [henryho], password is [1004]"}
+{"level":"ERROR","timestamp":"2021-06-08 14:36:32.641","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1049: Unknown database 'db_accountserver'"}}
+{"level":"ERROR","timestamp":"2021-06-08 14:36:32.661","file":"model/init.go:29","msg":"Database connection failed. Database name: db_accountserver","data":{"error":"Error 1045: Access denied for user 'root'@'localhost' (using password: YES)"}}
+{"level":"INFO","timestamp":"2021-06-08 14:36:32.661","file":"accountserver/main.go:55","msg":"Start to listening the incoming requests on http address: :8888"}
+{"level":"INFO","timestamp":"2021-06-08 14:36:32.664","file":"accountserver/main.go:52","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2021-06-08 14:36:40.905","file":"user/create.go:22","msg":"URL username: captaincolor"}
+{"level":"INFO","timestamp":"2021-06-08 14:36:40.906","file":"user/create.go:25","msg":"URL key param desc: test"}
+{"level":"INFO","timestamp":"2021-06-08 14:36:40.907","file":"user/create.go:28","msg":"Header Content-Type: application/json"}
+{"level":"DEBUG","timestamp":"2021-06-08 14:36:40.907","file":"user/create.go:30","msg":"username is: [henryho], password is [1004]"}
